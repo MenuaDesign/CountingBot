@@ -1,4 +1,5 @@
 import discord
+import os
 client = discord.Client()
 @client.event
 async def on_ready():
@@ -26,4 +27,4 @@ async def on_message(message):
                 return
     except ValueError:
         await message.delete()
-client.run('ODA2MjcwNjcwNDQyMDcwMDU2.YBnAEw.cphNfm4URwKBmeuW9jSbGKbMW4A')
+client.run(os.environ['TOKEN'])
