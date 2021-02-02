@@ -14,10 +14,10 @@ async def on_message(message):
         global Author_last
         Author_current = message.author.id
         channelid = (806265386981916715)
-        if Author_current == Author_last:
-            await message.delete()
-            return
         if message.channel.id == channelid:
+            if Author_current == Author_last:
+                await message.delete()
+                return
             if int(message.content) == Count + 1:
                 Count += 1
                 Author_last = message.author.id
