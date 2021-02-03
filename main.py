@@ -4,7 +4,7 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print("Logged {0.user}\nReady".format(client))
-Count = 0
+Count = 215
 Author_last = None
 Author_current = None
 @client.event
@@ -19,12 +19,18 @@ async def on_message(message):
                 await message.delete()
                 return
             if int(message.content) == Count + 1:
+                print("------------------------")
+                print(Count)
+                print("-----------")
                 Count += 1
+                print(Count)
+                print("------------------------")
                 Author_last = message.author.id
                 return
             elif int(message.content) != Count + 1:
                 await message.delete()
                 return
+
     except ValueError:
         await message.delete()
 client.run(os.environ['TOKEN'])
