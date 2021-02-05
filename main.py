@@ -4,7 +4,7 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print("Logged {0.user}\nReady".format(client))
-Count = 215
+Count = 254
 Author_last = None
 Author_current = None
 @client.event
